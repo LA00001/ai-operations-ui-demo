@@ -24,8 +24,8 @@ dotnet run
 Без этого Blazor не распознавал `Router`, `Found`, `NotFound`, и сборка падала на `routeData`.
 
 ## ИСТОРИЯ
-1 ai-operations-ui-demo.zip — простой Blazor UI
-2 topic-knowledge-base-demo.zip — справочник тем 101–115
+# 1 ai-operations-ui-demo.zip — простой Blazor UI
+# 2 topic-knowledge-base-demo.zip — справочник тем 101–115
 3 docx-generator-demo.zip — отдельная генерация DOCX
 4 workflow-pipeline-demo.zip — конвейер в консольном варианте
 5 generated-files-api-demo.zip — API для выдачи файлов
