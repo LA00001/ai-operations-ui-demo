@@ -1,0 +1,12 @@
+body { margin:0; font-family: Arial, sans-serif; background:#f5f7fb; color:#172033; }
+.page { max-width:1100px; margin:0 auto; padding:32px; }
+.hero { background:linear-gradient(135deg,#172033,#334155); color:white; padding:32px; border-radius:24px; margin-bottom:20px; }
+.badge { display:inline-block; font-size:12px; letter-spacing:.08em; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.16); }
+.card { background:white; border-radius:20px; padding:22px; box-shadow:0 14px 36px rgba(15,23,42,.08); margin-bottom:20px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.input { width:100%; padding:12px; border:1px solid #d9e1ec; border-radius:12px; margin:8px 0 12px; }
+.btn { padding:12px 18px; border:0; border-radius:12px; background:#2563eb; color:white; font-weight:700; cursor:pointer; }
+.topic { padding:8px 0; border-bottom:1px solid #edf1f7; }
+.preview { padding:14px; border:1px solid #edf1f7; border-radius:14px; margin-bottom:12px; }
+.muted { color:#64748b; }
+@media (max-width: 800px) { .grid { grid-template-columns:1fr; } }

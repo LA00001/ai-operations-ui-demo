@@ -1,0 +1,10 @@
+var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseUrls("https://localhost:60001");
+builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
+var app = builder.Build();
+app.UseStaticFiles();
+app.UseRouting();
+app.MapBlazorHub();
+app.MapFallbackToPage("/_Host");
+app.Run();

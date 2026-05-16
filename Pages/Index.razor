@@ -1,0 +1,58 @@
+@page "/"
+
+<div class="page">
+    <section class="hero">
+        <span class="badge">UI DEMO</span>
+        <h1>AI Operations Documentation Assistant</h1>
+        <p>Простой Blazor UI-прототип: ввод тем, выбор процессов и предпросмотр операционной инструкции.</p>
+    </section>
+
+    <section class="card">
+        <label>Темы или описание задачи</label>
+        <input class="input" @bind="_filterText" />
+        <button class="btn" type="button" @onclick="BuildPreview">Сформировать предпросмотр</button>
+    </section>
+
+    <section class="grid">
+        <div class="card">
+            <h2>Справочник тем</h2>
+            @foreach (var topic in _repository.GetAll())
+            {
+                <div class="topic"><b>@topic.Id</b> — @topic.Name</div>
+            }
+        </div>
+        <div class="card">
+            <h2>Предпросмотр</h2>
+            @if (_selected.Count == 0)
+            {
+                <p class="muted">Введите, например: 101 102</p>
+            }
+            else
+            {
+                @foreach (var topic in _selected)
+                {
+                    <article class="preview">
+                        <h3>@topic.Id — @topic.Name</h3>
+                        <p><b>Инструменты:</b> @topic.Tools</p>
+                        <p>Будет создана операционная инструкция с разделами: назначение, порядок выполнения, требования, проверка результата.</p>
+                    </article>
+                }
+            }
+        </div>
+    </section>
+</div>
+
+@code {
+    private readonly ITopicRepository _repository = new InMemoryTopicRepository();
+    private string _filterText = "101 102";
+    private List<TopicInfo> _selected = new();
+
+    protected override void OnInitialized() => BuildPreview();
+
+    private void BuildPreview()
+    {
+        var ids = Regex.Matches(_filterText ?? "", @"\d+").Select(x => int.Parse(x.Value)).Distinct().ToList();
+        if (ids.Count == 0) ids.AddRange(new[] { 101, 102 });
+        _selected = ids.Select(_repository.GetById).ToList();
+    }
+}
