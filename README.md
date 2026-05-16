@@ -23,9 +23,31 @@ dotnet run
 Добавлен `@using Microsoft.AspNetCore.Components.Routing` в `_Imports.razor`.
 Без этого Blazor не распознавал `Router`, `Found`, `NotFound`, и сборка падала на `routeData`.
 
+## ИСТОРИЯ
+1 ai-operations-ui-demo.zip — простой Blazor UI
+2 topic-knowledge-base-demo.zip — справочник тем 101–115
+3 docx-generator-demo.zip — отдельная генерация DOCX
+4 workflow-pipeline-demo.zip — конвейер в консольном варианте
+5 generated-files-api-demo.zip — API для выдачи файлов
+6 ai-document-workflow-demo.zip — главный полный MVP с UI + конвейером
+
 
 ## License
 
-Copyright (c) 2026 Андрей / LA00001. All rights reserved.
+Copyright (c) 2026 Андрей / LA00001
 
-This repository is a portfolio demo. Private backend logic, API keys and production configuration are excluded.
+All rights reserved.
+
+This repository is provided for portfolio and demonstration purposes only.
+Copying, redistribution, modification, sublicensing, commercial use, or publication
+of the source code is not permitted without prior written permission from the author.
+
+---
+
+Авторское право (c) 2026 Андрей / LA00001
+
+Все права защищены.
+
+Данный репозиторий предоставлен только для демонстрации в портфолио.
+Копирование, распространение, изменение, сублицензирование, коммерческое использование
+или публикация исходного кода не допускаются без предварительного письменного разрешения автора.
